@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import Parks from "./components/Parks";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import { CheckSession } from "../services/Auth";
+import { checkSession } from "../services/Auth";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -18,7 +18,7 @@ const App = () => {
 
   useEffect(() => {
     const checkToken = async () => {
-      const user = await CheckSession();
+      const user = await checkSession();
       setUser(user);
     };
 
