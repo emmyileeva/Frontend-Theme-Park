@@ -6,12 +6,12 @@ const Parks = () => {
   const [parks, setParks] = useState([])
   
   const fetchParks = async () => {
-    let response = await axios.get("pathtobackend")
-    setParks(response.data)
+    let response = await axios.get("pathtopac")
+    setPeople(response.data)
   }  
 
   useEffect(() => {
-    fetchParks()
+    fetchPeople()
   }, [])
   
   return (
@@ -21,7 +21,6 @@ const Parks = () => {
             {parks.map(park => (
                 <div key={park._id}>
                 <h3>{park.name}</h3>
-                <h4>{park.description}</h4>
                 <h5>{park.thrilledLevel}</h5>
                 </div>
             ))}
