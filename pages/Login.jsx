@@ -1,11 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [usernameOrEmail, setUsernameOrEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,15 +15,11 @@ const Login = () => {
         password,
       });
       console.log(response.data);
-      setLoggedIn(true);
+      navigate("/");
     } catch (error) {
       console.error("Error logging in:", error);
     }
   };
-
-  if (loggedIn) {
-    return <Redirect to="/" />;
-  }
 
   return (
     <div>

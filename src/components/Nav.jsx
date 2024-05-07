@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Nav = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSearch = () => {
-    history.push(`/parks?search=${encodeURIComponent(searchQuery)}`);
+    navigate(`/parks?search=${encodeURIComponent(searchQuery)}`);
   };
 
   return (
@@ -16,7 +15,6 @@ const Nav = () => {
       <div>
         <Link to="/">Home</Link>
         <Link to="/parks">Parks</Link>
-        <Link to="/add">Contact Us</Link>
         <input
           type="text"
           value={searchQuery}

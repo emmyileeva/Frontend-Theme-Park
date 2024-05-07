@@ -1,12 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [registered, setRegistered] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,15 +17,11 @@ const Register = () => {
         password,
       });
       console.log(response.data);
-      setRegistered(true);
+      navigate("/login");
     } catch (error) {
       console.error("Error registering user:", error);
     }
   };
-
-  if (registered) {
-    return <Redirect to="/login" />;
-  }
 
   return (
     <div>
