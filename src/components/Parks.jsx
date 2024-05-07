@@ -6,7 +6,7 @@ const Parks = () => {
 
     const fetchParks = async () => {
         try {
-            const response = await axios.get('HEROKU_API_URL_HERE'); //  'HEROKU_API_URL_HERE' 
+            const response = await axios.get('https://themepark123-e6af4e64e039.herokuapp.com/'); //  'HEROKU_API_URL_HERE' 
             setParks(response.data);
         } catch (error) {
             console.error('Error fetching parks:', error);
