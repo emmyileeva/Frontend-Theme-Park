@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="container">
+    <div className="about-container">
       <h2>About Thrill Track</h2>
       <p>
         Thrill Track is your ultimate destination for exploring theme parks

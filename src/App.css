@@ -112,6 +112,7 @@ footer {
   background-color: #e4e8ead3;
   border-radius: 60px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .password-input-container {
@@ -162,4 +163,17 @@ button {
 
 button:hover {
   background-color: #748fad;
+}
+
+.about-container {
+  margin: 40px;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ececec;
+  text-align: center;
+}
+
+.tickets {
+text-align: center;
 }

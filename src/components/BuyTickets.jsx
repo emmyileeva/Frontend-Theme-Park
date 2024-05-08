@@ -4,7 +4,7 @@ const BuyTickets = () => {
   const [ticketOptions, setTicketOptions] = useState([
     { type: "adult", price: 30, quantity: 0 },
     { type: "child", price: 20, quantity: 0 },
-    { type: "senior", price: 25, quantity: 0 }
+    { type: "senior", price: 25, quantity: 0 },
   ]);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -16,7 +16,10 @@ const BuyTickets = () => {
   };
 
   const calculateTotalPrice = (options) => {
-    const total = options.reduce((acc, option) => acc + option.price * option.quantity, 0);
+    const total = options.reduce(
+      (acc, option) => acc + option.price * option.quantity,
+      0
+    );
     setTotalPrice(total);
   };
 
@@ -27,12 +30,14 @@ const BuyTickets = () => {
   };
 
   return (
-    <div>
+    <div className="tickets">
       <h2>Buy Tickets</h2>
       <form onSubmit={handleSubmit}>
         {ticketOptions.map((option, index) => (
           <div key={index}>
-            <label htmlFor={`ticketType-${option.type}`}>{option.type.charAt(0).toUpperCase() + option.type.slice(1)}:</label>
+            <label htmlFor={`ticketType-${option.type}`}>
+              {option.type.charAt(0).toUpperCase() + option.type.slice(1)}:
+            </label>
             <input
               type="number"
               id={`ticketType-${option.type}`}
