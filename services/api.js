@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "http://localhost:3001";
+export const BASE_URL = "https://themepark123-e6af4e64e039.herokuapp.com/";
 
 const Client = axios.create({ baseURL: BASE_URL });
 
