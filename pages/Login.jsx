@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 const Login = () => {
   const [usernameOrEmail, setUsernameOrEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -23,7 +24,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="auth-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -32,15 +33,23 @@ const Login = () => {
           value={usernameOrEmail}
           onChange={(e) => setUsernameOrEmail(e.target.value)}
         />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className="password-input-container">
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button
+            type="button"
+            className="password-toggle"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? "Hide" : "Show"}
+          </button>
+        </div>
         <button type="submit">Login</button>
       </form>
-      {/* Link to register page */}
       <p>
         New user? <Link to="/register">Register here</Link>.
       </p>

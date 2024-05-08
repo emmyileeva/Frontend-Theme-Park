@@ -5,6 +5,7 @@ const Parks = () => {
   const [parks, setParks] = useState([]);
   const [selectedPark, setSelectedPark] = useState(null);
   const [showTheme, setShowTheme] = useState(false);
+  const attractions = ["Night Light Show", "Circus", "Magic Show"];
 
   useEffect(() => {
     fetchParks();
@@ -31,15 +32,7 @@ const Parks = () => {
   };
 
   const handleAttractionsClick = (attraction) => {
-    
-  };
-
-  const handleEventEdit = (eventId) => {
-    
-  };
-
-  const handleEventDelete = (eventId) => {
-    
+    // Handle attraction click event
   };
 
   const handleThemeClick = () => {
@@ -51,7 +44,6 @@ const Parks = () => {
       <div className="navbar">
         <div className="nav-links">
           <a href="#" className="nav-link">Attractions</a>
-          <a href="#" className="nav-link">Events</a>
           <a href="#" className="nav-link" onClick={handleThemeClick}>Theme</a>
         </div>
       </div>
@@ -76,29 +68,21 @@ const Parks = () => {
             <p>Food Courts: {selectedPark.foodCourtsAvailable ? "Available" : "Not Available"}</p>
             <p>Rides:</p>
             <ul>
-              {selectedPark.rides.map((ride, index) => (
-                <li key={index}>{ride}</li>
+              {selectedPark.rides.map((ride, rides) => (
+                <li key={rides}>{ride}</li>
               ))}
             </ul>
             <div>
               <h3>Attractions</h3>
               <ul>
-                <li>
-                  <a href="#" onClick={() => handleAttractionsClick("Night Light Show")}>Night Light Show</a>
-                  <p>Date and Time: [Insert date and time here]</p>
-                </li>
-                {/* Add more attractions here */}
-              </ul>
-            </div>
-            <div>
-              <h3>Events</h3>
-              <ul>
-                <li>
-                  Event 1
-                  <button onClick={() => handleEventEdit("event1")}>Edit</button>
-                  <button onClick={() => handleEventDelete("event1")}>Delete</button>
-                </li>
-                {/* Add more events here */}
+                {attractions.map((attraction, index) => (
+                  <li key={index}>
+                    <a href="#" onClick={() => handleAttractionsClick(attraction)}>
+                      {attraction}
+                    </a>
+                    <p>Date and Time: [Insert date and time here]</p>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -106,7 +90,6 @@ const Parks = () => {
       </div>
       {showTheme && (
         <div className="theme-container">
-          
           <ul style={{ listStyleType: "none", padding: 0 }}>
             <li>
               <a href="#">Comic Carnival</a>
@@ -125,6 +108,6 @@ const Parks = () => {
       )}
     </div>
   );
-}
+};
 
 export default Parks;
