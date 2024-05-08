@@ -24,7 +24,7 @@ const Nav = () => {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Explore theme..."
+          placeholder="Explore Parks..."
         />
         <button onClick={handleSearch}>Search</button>
       </div>

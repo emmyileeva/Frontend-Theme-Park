@@ -5,8 +5,6 @@ import "../App.css";
 const Parks = () => {
   const [parks, setParks] = useState([]);
   const [selectedPark, setSelectedPark] = useState(null);
-  const [showTheme, setShowTheme] = useState(false);
-  const attractions = ["Night Light Show", "Circus", "Magic Show"];
 
   useEffect(() => {
     fetchParks();
@@ -19,7 +17,7 @@ const Parks = () => {
       );
       if (Array.isArray(response.data)) {
         setParks(response.data);
-        setSelectedPark(response.data[0]); // Select the first park by default
+        setSelectedPark(response.data[0]);
       } else {
         console.error("Fetched parks data is not an array:", response.data);
       }
@@ -32,21 +30,9 @@ const Parks = () => {
     setSelectedPark(park);
   };
 
-  const handleAttractionsClick = (attraction) => {
-    // Handle attraction click event
-  };
-
-  const handleThemeClick = () => {
-    setShowTheme(true);
-  };
-
   return (
     <div>
-      <div className="navbar">
-        <div className="nav-links">
-          
-        </div>
-      </div>
+      <h1 className="parks-title">Explore All Parks</h1>
       <div className="park-container">
         <ul className="parks-list">
           {parks.map((park) => (
@@ -59,17 +45,18 @@ const Parks = () => {
             </li>
           ))}
         </ul>
-        {selectedPark && (
+      </div>
+      {selectedPark && (
+        <div className="park-details-container">
           <div className="park-details">
             <h2>{selectedPark.name}</h2>
             <p>Location: {selectedPark.location}</p>
             <p>Admission Price: ${selectedPark.admissionPrice}</p>
             <p>Capacity: {selectedPark.capacity}</p>
             <p>Description: {selectedPark.description}</p>
-
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
