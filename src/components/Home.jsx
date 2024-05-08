@@ -1,19 +1,9 @@
-
-import React from "react";
 import "../App.css";
-
-const Home = () => {
-  return (
-    <div className="container">
-      <h1>Thrill Track - Your Adventure Oasis Awaits!</h1>
-
 
 const Home = () => {
   return (
     <div>
       <h1>Welcome to Thrill Track - Your Adventure Oasis Awaits!</h1>
-      
-
       <p>
         Thrill Track is your ultimate destination for exploring theme parks
         around the world. Whether you're a roller coaster enthusiast, a fan of
