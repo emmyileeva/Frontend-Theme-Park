@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const BuyTickets = () => {
   const [ticketOptions, setTicketOptions] = useState([
@@ -23,10 +24,22 @@ const BuyTickets = () => {
     setTotalPrice(total);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Purchased tickets:", ticketOptions);
-    console.log("Total price:", totalPrice);
+    try {
+      
+      const tickets = ticketOptions.map(({ type, quantity }) => ({
+        ticketType: type,
+        quantity,
+        totalPrice: quantity * ticketOptions.find(t => t.type === type).price
+      }));
+
+      
+      const response = await axios.post("/api/buyTickets", { tickets });
+      console.log("Purchase successful:", response.data);
+    } catch (error) {
+      console.error("Error purchasing tickets:", error);
+    }
   };
 
   return (
