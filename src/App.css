@@ -80,17 +80,20 @@ footer {
 }
 .park-container {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .parks-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center park items horizontally */
+  align-items: center; /* Center park items vertically */
+  width: 100%; /* Ensure the list takes full width of its container */
 }
 
 .park-item {
