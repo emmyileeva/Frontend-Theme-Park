@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "http://localhost:5173";
+export const BASE_URL = "https://themepark123-e6af4e64e039.herokuapp.com/";
 
 const Client = axios.create({ baseURL: BASE_URL });
 
@@ -16,5 +16,9 @@ Client.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
+export const purchaseTickets = (ticketsData) => {
+  return Client.post("/api/buyTickets", ticketsData);
+};
 
 export default Client;
