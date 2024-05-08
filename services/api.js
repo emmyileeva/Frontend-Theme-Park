@@ -17,4 +17,8 @@ Client.interceptors.request.use(
   }
 );
 
+export const purchaseTickets = (ticketsData) => {
+  return Client.post("/api/buyTickets", ticketsData);
+};
+
 export default Client;
