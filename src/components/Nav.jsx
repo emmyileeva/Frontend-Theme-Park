@@ -1,27 +1,30 @@
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import "../App.css";
 
 const Nav = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSearch = () => {
-    history.push(`/parks?search=${encodeURIComponent(searchQuery)}`);
+    navigate(`/parks?search=${encodeURIComponent(searchQuery)}`);
   };
 
   return (
     <nav className="navbar">
-      <h4>Thrill Track</h4>
+      <div className="logo">Tt</div>
       <div>
         <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
         <Link to="/parks">Parks</Link>
-        <Link to="/add">Contact Us</Link>
+        <Link to="/buy-tickets">Buy Tickets</Link>
+        <Link to="/logIn">Log In</Link>
+
         <input
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search parks..."
+          placeholder="Explore theme..."
         />
         <button onClick={handleSearch}>Search</button>
       </div>
