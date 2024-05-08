@@ -9,15 +9,12 @@
 body {
   margin: 0;
 }
-
 div {
   background-size: cover;
 }
-
 .home, .navbar {
   display: flex;
 }
-
 .home {
   background-image: url("https://images6.alphacoders.com/372/372198.jpg");
   height: 80vh;
@@ -29,46 +26,73 @@ div {
   color: white;
 }
 
+
 h1, h2, h3, h4 {
   margin: 0;
 }
-
 .navbar {
   justify-content: space-between;
   align-items: center;
-  color: black;
+  color: rgb(37, 34, 55);
   background: linear-gradient(to right, #3498DB, white);
   padding: 1em;
   min-height: 2em;
   font-family: 'Georgia';
-}
+  width: 100%;
+  }
 
 .navbar a {
-  text-decoration: none;
+  text-decoration:none;
   color: white;
   font-weight: bold;
-  margin-left: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 
-.parks-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
 }
 
-.park-card {
-  background-color: #f4f4f4;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+main {
+  flex-grow: 1; 
 }
 
-.park-card h3 {
-  margin-top: 0;
+footer {
+  background: linear-gradient(to right, #3498DB, white);
+  color: #3a3838;
+  padding: 5px;
+  text-align: center;
+  position: fixed; 
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.park-container {
+  display: flex;
 }
 
-.park-card p {
-  margin: 10px 0;
+.parks-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
+.park-item {
+  margin-bottom: 1em;
+}
+
+.park-link {
+  text-decoration: none;
+  color: #003087;
+}
+
+.park-details {
+  margin-left: 2em;
+}
+
+.park-details h2 {
+  color: #6b7891;
+}

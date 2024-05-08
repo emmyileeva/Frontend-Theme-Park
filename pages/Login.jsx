@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 
 const Login = () => {
   const [usernameOrEmail, setUsernameOrEmail] = useState("");
@@ -39,6 +40,10 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
+      {/* Link to register page */}
+      <p>
+        New user? <Link to="/register">Register here</Link>.
+      </p>
     </div>
   );
 };

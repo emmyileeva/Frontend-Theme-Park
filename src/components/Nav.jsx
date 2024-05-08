@@ -15,6 +15,8 @@ const Nav = () => {
       <div>
         <Link to="/">Home</Link>
         <Link to="/parks">Parks</Link>
+        <Link to="/logIn">Log In</Link>
+        
         <input
           type="text"
           value={searchQuery}

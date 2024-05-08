@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div className="App">
       <Nav user={user} handleLogOut={handleLogOut} />
-      <h1>Thrill Track - Your Adventure Oasis Awaits!</h1>
+      
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -40,6 +40,9 @@ const App = () => {
           <Route path="/parks" element={<Parks user={user} />} />
         </Routes>
       </main>
+      <footer>
+        <p>&copy; 2024 Thrill Track. All rights reserved.</p>
+      </footer>
     </div>
   );
 };

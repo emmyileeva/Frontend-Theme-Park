@@ -1,7 +1,8 @@
 const Home = () => {
   return (
     <div>
-      <h2>Welcome to Thrill Track!</h2>
+      <h1>Welcome to Thrill Track - Your Adventure Oasis Awaits!</h1>
+      
       <p>
         Thrill Track is your ultimate destination for exploring theme parks
         around the world. Whether you're a roller coaster enthusiast, a fan of
