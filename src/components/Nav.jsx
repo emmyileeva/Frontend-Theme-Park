@@ -19,7 +19,7 @@ const Nav = () => {
         <Link to="/parks">Parks</Link>
         <Link to="/buy-tickets">Buy Tickets</Link>
         <Link to="/logIn">Log In</Link>
-        
+
         <input
           type="text"
           value={searchQuery}
@@ -27,14 +27,6 @@ const Nav = () => {
           placeholder="Explore theme..."
         />
         <button onClick={handleSearch}>Search</button>
-        <section className="login">
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
-          <Link to="/register">
-            <button>Register</button>
-          </Link>
-        </section>
       </div>
     </nav>
   );

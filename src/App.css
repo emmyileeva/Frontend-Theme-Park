@@ -1,50 +1,6 @@
 body {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-top: 80px;
 }
-
-.parks-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.park-card {
-  background-color: #f4f4f4;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.park-card h3 {
-  margin-top: 0;
-}
-
-.park-card p {
-  margin: 10px 0;
-}
-
-/* HOME PAGE */
-.container {
-  margin: 0;
-  padding: 0;
-  background-image: url("https://images6.alphacoders.com/372/372198.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  font-size: 48px;
-  color: #fff;
-  text-align: center;
-  margin-top: 0;
-  padding-top: 100px;
 
 div {
   background-size: cover;
@@ -65,49 +21,16 @@ div {
 h1 {
   font-size: 2em;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 p {
   font-size: 1.2em;
   line-height: 1.6;
-
-}
-
-p {
-  font-size: 24px;
-  line-height: 3;
-  color: #fff;
   text-align: center;
 }
 
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-/* NAV BAR */
 .navbar {
-  background: linear-gradient(to right, #3498DB, white);
-  color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.navbar h4 {
-  margin: 0;
-  font-size: 28px;
-  margin-top: 20px;
-}
-
   color: rgb(37, 34, 55);
   background: linear-gradient(to right, #3498DB, white);
   padding: 1em;
@@ -115,6 +38,8 @@ p {
   font-family: 'Georgia';
   font-size: large;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
   }
 
   .logo {
@@ -128,54 +53,10 @@ p {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
-  margin-left: 60px;
-}
-
-.navbar input[type="text"] {
-  padding: 4px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #fff;
-  margin-left: 50%;
-}
-
-.navbar button {
-  padding: 4px 8px;
-  font-size: 16px;
-  background-color: #fff;
-  color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.navbar button:hover {
-  background-color: #0056b3;
-  color: #fff;
-}
-
-/* Auth buttons */
-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 10px;
-}
-
-button:hover {
-  background-color: #0056b3;
-  text-decoration:none;
-  color: white;
-  font-weight: bold;
   margin-left: 1em;
+  font-weight: bold;
   margin-right: 1em;
 }
-
 
 .App {
   display: flex;
