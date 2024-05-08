@@ -177,3 +177,18 @@ button:hover {
 .tickets {
 text-align: center;
 }
+
+.home {
+  background-image: url("https://images6.alphacoders.com/372/372198.jpg");
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  padding: 50px 20px;
+  color: white;
+}

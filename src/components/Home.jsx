@@ -2,7 +2,7 @@ import "../App.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <h1>Welcome to Thrill Track - Your Adventure Oasis Awaits!</h1>
       <p>
         Thrill Track is your ultimate destination for exploring theme parks
