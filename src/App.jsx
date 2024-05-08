@@ -7,7 +7,9 @@ import Parks from "./components/Parks";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import { checkSession } from "../services/Auth";
+import About from "./components/About";
 import BuyTickets from "./components/BuyTickets";
+
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -32,10 +34,13 @@ const App = () => {
   return (
     <div className="App">
       <Nav user={user} handleLogOut={handleLogOut} />
+
       
+
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/parks" element={<Parks user={user} />} />

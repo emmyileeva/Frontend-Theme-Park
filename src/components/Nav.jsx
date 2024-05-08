@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import "../App.css";
 
 const Nav = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,6 +15,7 @@ const Nav = () => {
       <div className="logo">Tt</div>
       <div>
         <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
         <Link to="/parks">Parks</Link>
         <Link to="/buy-tickets">Buy Tickets</Link>
         <Link to="/logIn">Log In</Link>
@@ -25,6 +27,14 @@ const Nav = () => {
           placeholder="Explore theme..."
         />
         <button onClick={handleSearch}>Search</button>
+        <section className="login">
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+          <Link to="/register">
+            <button>Register</button>
+          </Link>
+        </section>
       </div>
     </nav>
   );
