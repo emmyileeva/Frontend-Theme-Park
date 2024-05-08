@@ -18,7 +18,7 @@ div {
   background-color: #e0cfcf;
 }
 
-h1 {
+h1 ,h2{
   font-size: 2em;
   margin-bottom: 20px;
   text-align: center;
@@ -71,7 +71,7 @@ main {
 footer {
   background: linear-gradient(to right, #3498DB, white);
   color: #3a3838;
-  padding: 5px;
+  padding: 2px;
   text-align: center;
   position: fixed; 
   left: 0;
@@ -80,29 +80,51 @@ footer {
 }
 .park-container {
   display: flex;
+  justify-content:space-evenly;
+  margin-top: 20px;
 }
 
 .parks-list {
-  margin: 0;
-  padding: 0;
   list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
 }
 
 .park-item {
-  margin-bottom: 1em;
+  border: 1px solid #beafaf;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.park-item:hover {
+  background-color: #e0d3d3;
 }
 
 .park-link {
-  text-decoration: none;
-  color: #003087;
+  display: block;
+  padding: 10px;
+  text-decoration:solid;
+  color: #776b6b;
 }
 
 .park-details {
-  margin-left: 2em;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  background-color: #c9d2d6;
+  
 }
 
 .park-details h2 {
-  color: #6b7891;
+  margin-top: 0;
+}
+
+.park-details p {
+  margin: 6px 0;
 }
 
 .auth-container {
@@ -169,7 +191,7 @@ button:hover {
   margin: 40px;
   padding: 50px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #ececec;
   text-align: center;
 }
