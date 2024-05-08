@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import "../App.css";
 
 const Nav = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,6 +15,7 @@ const Nav = () => {
       <h4>Thrill Track</h4>
       <div>
         <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
         <Link to="/parks">Parks</Link>
         <input
           type="text"
@@ -22,6 +24,14 @@ const Nav = () => {
           placeholder="Search parks..."
         />
         <button onClick={handleSearch}>Search</button>
+        <section className="login">
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+          <Link to="/register">
+            <button>Register</button>
+          </Link>
+        </section>
       </div>
     </nav>
   );
