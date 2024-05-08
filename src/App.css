@@ -12,25 +12,29 @@ body {
 div {
   background-size: cover;
 }
-.home, .navbar {
+
+.navbar {
   display: flex;
 }
 
-.home {
-  background-image: url("https://images6.alphacoders.com/372/372198.jpg");
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 50px 20px;
-  color: white;
+.home-container {
+  margin: 40px;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e0cfcf;
 }
 
-
-h1, h2, h3, h4 {
-  margin: 0;
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
 .navbar {
   justify-content: space-between;
   align-items: center;
@@ -126,4 +130,41 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.ticket-container {
+  max-width: 3000px;
+  margin: 8rem;
+  padding: 100px;
+  background-color: #5d6e76d3;
+  border-radius: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display:grid;
+  margin-bottom: 60px;
+}
+
+
+input[type=""]
+ {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #828587;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #748fad;
 }

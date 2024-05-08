@@ -1,52 +1,47 @@
 import React, { useState } from "react";
 
 const BuyTickets = () => {
-  const [ticketType, setTicketType] = useState("adult");
-  const [ticketQuantity, setTicketQuantity] = useState(1);
+  const [ticketOptions, setTicketOptions] = useState([
+    { type: "adult", price: 30, quantity: 0 },
+    { type: "child", price: 20, quantity: 0 },
+    { type: "senior", price: 25, quantity: 0 }
+  ]);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const ticketPrices = {
-    adult: 30,
-    child: 20,
-    senior: 25
+  const handleTicketQuantityChange = (index, e) => {
+    const updatedTicketOptions = [...ticketOptions];
+    updatedTicketOptions[index].quantity = parseInt(e.target.value);
+    setTicketOptions(updatedTicketOptions);
+    calculateTotalPrice(updatedTicketOptions);
   };
 
-  const handleTicketTypeChange = (e) => {
-    setTicketType(e.target.value);
-    calculateTotalPrice(e.target.value, ticketQuantity);
-  };
-
-  const handleTicketQuantityChange = (e) => {
-    setTicketQuantity(e.target.value);
-    calculateTotalPrice(ticketType, e.target.value);
-  };
-
-  const calculateTotalPrice = (type, quantity) => {
-    const price = ticketPrices[type] * quantity;
-    setTotalPrice(price);
+  const calculateTotalPrice = (options) => {
+    const total = options.reduce((acc, option) => acc + option.price * option.quantity, 0);
+    setTotalPrice(total);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Purchased ${ticketQuantity} ${ticketType} ticket(s) for a total of $${totalPrice}`);
+    console.log("Purchased tickets:", ticketOptions);
+    console.log("Total price:", totalPrice);
   };
 
   return (
     <div>
       <h2>Buy Tickets</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="ticketType">Ticket Type:</label>
-          <select id="ticketType" value={ticketType} onChange={handleTicketTypeChange}>
-            <option value="adult">Adult</option>
-            <option value="child">Child</option>
-            <option value="senior">Senior</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="ticketQuantity">Quantity:</label>
-          <input type="number" id="ticketQuantity" value={ticketQuantity} onChange={handleTicketQuantityChange} min="1" />
-        </div>
+        {ticketOptions.map((option, index) => (
+          <div key={index}>
+            <label htmlFor={`ticketType-${option.type}`}>{option.type.charAt(0).toUpperCase() + option.type.slice(1)}:</label>
+            <input
+              type="number"
+              id={`ticketType-${option.type}`}
+              value={option.quantity}
+              onChange={(e) => handleTicketQuantityChange(index, e)}
+              min="0"
+            />
+          </div>
+        ))}
         <div>
           <label>Total Price:</label>
           <span>${totalPrice}</span>
