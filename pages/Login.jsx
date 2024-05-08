@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-
 const Login = () => {
   const [usernameOrEmail, setUsernameOrEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,6 +31,7 @@ const Login = () => {
           placeholder="Username or Email"
           value={usernameOrEmail}
           onChange={(e) => setUsernameOrEmail(e.target.value)}
+          autoComplete="username"
         />
         <div className="password-input-container">
           <input
@@ -39,6 +39,7 @@ const Login = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
           />
           <button
             type="button"
