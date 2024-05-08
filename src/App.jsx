@@ -7,6 +7,7 @@ import Parks from "./components/Parks";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import { checkSession } from "../services/Auth";
+import BuyTickets from "./components/BuyTickets";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -31,15 +32,19 @@ const App = () => {
   return (
     <div className="App">
       <Nav user={user} handleLogOut={handleLogOut} />
-      <h1>Thrill Track - Your Adventure Oasis Awaits!</h1>
+      
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/parks" element={<Parks user={user} />} />
+          <Route path="/buy-tickets" element={<BuyTickets />} />
         </Routes>
       </main>
+      <footer>
+        <p>&copy; 2024 Thrill Track. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
