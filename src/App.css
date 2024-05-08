@@ -91,9 +91,9 @@ footer {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center park items horizontally */
-  align-items: center; /* Center park items vertically */
-  width: 100%; /* Ensure the list takes full width of its container */
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
 }
 
 .park-item {
@@ -154,21 +154,21 @@ footer {
 }
 
 .ticket-container {
-  max-width: 3000px;
-  margin: 8rem;
-  padding: 100px;
+  max-width: 300px;
+  margin: 5rem;
+  padding: 50px;
   background-color: #5d6e76d3;
   border-radius: 60px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 label {
   display:grid;
-  margin-bottom: 60px;
+  margin-bottom: 1px;
 }
 
 
