@@ -17,6 +17,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
 .park-card h3 {
   margin-top: 0;
 }
@@ -44,6 +45,32 @@ h1 {
   text-align: center;
   margin-top: 0;
   padding-top: 100px;
+
+div {
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+}
+
+.home-container {
+  margin: 40px;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e0cfcf;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+
 }
 
 p {
@@ -57,6 +84,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 /* NAV BAR */
@@ -70,9 +98,7 @@ p {
   height: 80px;
   display: flex;
     justify-content: space-between;
-    /* Align items horizontally */
     align-items: center;
-    /* Align items vertically */
     padding: 0 20px;
 }
 
@@ -82,6 +108,22 @@ p {
   margin-top: 20px;
 }
 
+  color: rgb(37, 34, 55);
+  background: linear-gradient(to right, #3498DB, white);
+  padding: 1em;
+  min-height: 2em;
+  font-family: 'Georgia';
+  font-size: large;
+  width: 100%;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight:inherit;
+    color: #120b0b; 
+    text-shadow: 2px 2px 4px rgba(97, 82, 130, 0.96); 
+  }
+  
 .navbar a {
   color: #fff;
   text-decoration: none;
@@ -127,4 +169,116 @@ button {
 
 button:hover {
   background-color: #0056b3;
+  text-decoration:none;
+  color: white;
+  font-weight: bold;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+main {
+  flex-grow: 1; 
+}
+
+footer {
+  background: linear-gradient(to right, #3498DB, white);
+  color: #3a3838;
+  padding: 5px;
+  text-align: center;
+  position: fixed; 
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.park-container {
+  display: flex;
+}
+
+.parks-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.park-item {
+  margin-bottom: 1em;
+}
+
+.park-link {
+  text-decoration: none;
+  color: #003087;
+}
+
+.park-details {
+  margin-left: 2em;
+}
+
+.park-details h2 {
+  color: #6b7891;
+}
+
+.auth-container {
+  max-width: 3000px;
+  margin: 8rem;
+  padding: 100px;
+  background-color: #e4e8ead3;
+  border-radius: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.password-input-container {
+  position:relative;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ticket-container {
+  max-width: 3000px;
+  margin: 8rem;
+  padding: 100px;
+  background-color: #5d6e76d3;
+  border-radius: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display:grid;
+  margin-bottom: 60px;
+}
+
+
+input[type=""]
+ {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #828587;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #748fad;
 }
